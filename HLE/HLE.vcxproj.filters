@@ -121,5 +121,8 @@
     <None Include="Vector2.inl">
       <Filter>Header Files</Filter>
     </None>
+    <None Include="Math.inl">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
