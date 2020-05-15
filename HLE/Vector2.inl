@@ -127,12 +127,7 @@ namespace hle
 	template<typename T>
 	sf::Vector2<T> normalize(const sf::Vector2<T>& vec)
 	{
-		T len = lengthSquared(vec);
-
-		if (len != static_cast<T>(0))
-		{
-			return sf::Vector2<T>(vec.x / len, vec.y / len);
-		}
+		return unitVector<T>(vec);
 	}
 	template<typename T>
 	bool is_normalized(const sf::Vector2<T>& vec)

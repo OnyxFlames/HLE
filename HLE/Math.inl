@@ -13,7 +13,7 @@ namespace hle
 		template<typename T>
 		inline T radian_to_degree(const T rad)
 		{
-			return rad * M_PI / static_cast<T>(180.0);
+			return rad * static_cast<T>(180.0) / M_PI;
 		}
 
 		template<typename T>
