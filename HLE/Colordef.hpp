@@ -11,6 +11,9 @@ namespace hle
 {
 	namespace color
 	{
+
+		// TODO: Add color names
+
 #define hle_sfml_color(name, r, g, b) const static sf::Color name = sf::Color(r, g, b)
 
 		// reds

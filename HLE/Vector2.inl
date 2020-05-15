@@ -47,7 +47,7 @@ namespace hle
 	inline T polarAngle(const sf::Vector2<T>& vec)
 	{
 		assert(vec != sf::Vector2<T>());
-		return std::atan2(static_cast<T>(vec.x), static_cast<T>(vec.y));
+		return std::atan2(static_cast<T>(vec.y), static_cast<T>(vec.x));
 	}
 
 	template<typename T>
@@ -125,17 +125,17 @@ namespace hle
 	}
 
 	template<typename T>
-	sf::Vector2<T> normalize(const sf::Vector2<T>& vec)
+	inline sf::Vector2<T> normalize(const sf::Vector2<T>& vec)
 	{
 		return unitVector<T>(vec);
 	}
 	template<typename T>
-	bool is_normalized(const sf::Vector2<T>& vec)
+	inline bool is_normalized(const sf::Vector2<T>& vec)
 	{
 		return math::is_approx_equal(lengthSquared(vec), static_cast<T>(1.0));
 	}
 	template<typename T>
-	sf::Vector2<T> step_to(const sf::Vector2<T>& from, const sf::Vector2<T>& to)
+	inline sf::Vector2<T> step_to(const sf::Vector2<T>& from, const sf::Vector2<T>& to)
 	{
 		return sf::Vector2<T>
 			(
@@ -155,5 +155,41 @@ namespace hle
 
 		return (len <= delta || len < CMP_TOLERANCE) ? to : from + diff / len * delta;
 
+	}
+
+	template<typename T>
+	inline sf::Vector2<T> clamp(const sf::Vector2<T>& vec, T len)
+	{
+		const T vlen = length(vec);
+
+		sf::Vector2<T> ret = vec;
+
+		if (vlen > static_cast<T>(0) && len < vlen)
+		{
+			ret /= vlen;
+			ret *= len;
+		}
+		return ret;
+	}
+
+	template<typename T>
+	inline sf::Vector2<T> slide(const sf::Vector2<T>& vec, const sf::Vector2<T>& normal)
+	{
+		assert(hle::is_normalized(normal));
+		return vec - normal * hle::dotProduct(vec, normal);
+	}
+
+	template<typename T>
+	inline sf::Vector2<T> bounce(const sf::Vector2<T>& vec, const sf::Vector2<T>& normal)
+	{
+		assert(hle::is_normalized(normal));
+		return -reflect(vec, normal);
+	}
+
+	template<typename T>
+	inline sf::Vector2<T> reflect(const sf::Vector2<T>& vec, const sf::Vector2<T>& normal)
+	{
+		assert(hle::is_normalized(normal));
+		return static_cast<T>(2.0) * normal * hle::dotProduct(vec, normal) - vec;
 	}
 }

@@ -66,6 +66,18 @@ namespace hle
 	sf::Vector2<T> move_toward(const sf::Vector2<T>& from, const sf::Vector2<T>& to, const T delta);
 
 	template <typename T>
+	sf::Vector2<T> clamp(const sf::Vector2<T>& vec, T len);
+
+	template <typename T>
+	sf::Vector2<T> slide(const sf::Vector2<T>& vec, const sf::Vector2<T>& normal);
+
+	template <typename T>
+	sf::Vector2<T> bounce(const sf::Vector2<T>& vec, const sf::Vector2<T>& normal);
+
+	template <typename T>
+	sf::Vector2<T> reflect(const sf::Vector2<T>& vec, const sf::Vector2<T>& normal);
+
+	template <typename T>
 	std::string to_string(const sf::Vector2<T>& vec);
 
 	

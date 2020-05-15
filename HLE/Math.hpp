@@ -42,7 +42,6 @@ namespace hle
 		template <typename T>
 		T smoothstep(const T from, const T to, const T val);
 	
-	
 		template <typename T>
 		T snap_to(const T offset, const T step, const T target);
 
