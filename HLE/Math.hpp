@@ -37,10 +37,15 @@ namespace hle
 		bool is_approx_equal(const T x, const T y);
 
 		template <typename T>
-		T step(T val, T step);
+		T step(const T val, const T step);
 
 		template <typename T>
-		T smoothstep(T from, T to, T val);
+		T smoothstep(const T from, const T to, const T val);
+	
+	
+		template <typename T>
+		T snap_to(const T offset, const T step, const T target);
+
 	}
 }
 

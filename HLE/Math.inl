@@ -54,7 +54,7 @@ namespace hle
 		}
 
 		template<typename T>
-		inline T step(T val, T step)
+		inline T step(const T val, const T step)
 		{
 			if (step != 0)
 				val = std::floor(val / step + static_cast<T>(0.5)) * step;
@@ -62,7 +62,7 @@ namespace hle
 		}
 
 		template<typename T>
-		inline T smoothstep(T from, T to, T val)
+		inline T smoothstep(const T from, const T to, const T val)
 		{
 			if (is_approx_equal(from, to))
 				return from;
@@ -70,6 +70,11 @@ namespace hle
 			T x = clamp((val - from) / (to - from), static_cast<T>(0), static_cast<T>(1));
 
 			return x * x * (static_cast<T>(3.0) - static_cast<T>(2.0) * x);
+		}
+		template<typename T>
+		T snap_to(const T offset, const T step, const T target)
+		{
+			return step != static_cast<T>(0) ? math::step(target - offset, step) + offset : target;
 		}
 	}
 }
