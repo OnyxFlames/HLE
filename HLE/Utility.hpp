@@ -15,7 +15,10 @@ namespace hle
 		bool contains(const std::vector<T>& vec, const T& val);
 
 		template <typename T, typename U>
-		bool contains(const std::map<T, U>& map, const T& val);
+		bool contains(const std::map<T, U>& map, const T& key);
+
+		template <typename T, typename U>
+		bool contains(const std::map<T, U>& map, const U& key);
 
 		template <typename T>
 		bool swap_remove(std::vector<T>& vec, const size_t idx);

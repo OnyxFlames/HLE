@@ -1,3 +1,4 @@
+#include "Utility.hpp"
 #pragma once
 
 
@@ -16,9 +17,18 @@ namespace hle
 		}
 
 		template<typename T, typename U>
-		inline bool contains(const std::map<T, U>& map, const T& val)
+		inline bool contains(const std::map<T, U>& map, const T& key)
 		{
-			return map.find(val) != map.end();
+			return map.find(key) != map.end();
+		}
+
+		template<typename T, typename U>
+		inline bool contains(const std::map<T, U>& map, const U& val)
+		{
+			for (auto& it : map)
+				if (it == val)
+					return true;
+			return false;
 		}
 
 		template<typename T>
