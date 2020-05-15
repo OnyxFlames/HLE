@@ -11,6 +11,8 @@
 
 #define CMP_TOLERANCE 0.00001
 
+#include <type_traits>
+
 namespace hle
 {
 	namespace math
@@ -23,14 +25,22 @@ namespace hle
 		T radian_to_degree(const T rad);
 
 		template <typename T>
+		T clamp(const T val, const T min, const T max);
+
+		template <typename T>
 		T lerp(const T from, const T to, const T val);
+
+		template <typename T>
+		T lerp_angle(const T from, const T to, const T val);
 
 		template <typename T>
 		bool is_approx_equal(const T x, const T y);
 
-		template<typename T>
+		template <typename T>
 		T step(T val, T step);
 
+		template <typename T>
+		T smoothstep(T from, T to, T val);
 	}
 }
 
