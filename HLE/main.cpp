@@ -11,11 +11,11 @@
 
 int main()
 {
-	sf::Vector2f vec(16, 32);
-	for (size_t i = 0; i < 100; ++i)
+	float f = 1.f;
+	for (size_t i = 0; i < 32; ++i)
 	{
-		hle::math::smoothstep(10, 0, 1);
-
+		f *= 1.25f;
+		printf("%g - %g\n", f, hle::math::snap_to<float>(f, 8, 128));
 	}
 
 	return 0;

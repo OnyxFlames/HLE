@@ -32,5 +32,7 @@ namespace hle
 		uint32_t operator|(ColorFilter lhs, ColorFilter rhs);
 
 		std::vector<sf::Color> getColors(uint32_t colors);
+
+		sf::Color byName(const std::string name);
 	}
 }

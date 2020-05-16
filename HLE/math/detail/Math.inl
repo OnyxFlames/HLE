@@ -1,4 +1,3 @@
-#include "Math.hpp"
 #pragma once
 
 #include <algorithm>
@@ -57,7 +56,7 @@ namespace hle
 		inline T step(const T val, const T step)
 		{
 			if (step != 0)
-				val = std::floor(val / step + static_cast<T>(0.5)) * step;
+				return std::floor(val / step + static_cast<T>(0.5)) * step;
 			return val;
 		}
 

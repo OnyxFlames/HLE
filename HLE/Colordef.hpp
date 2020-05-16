@@ -5,6 +5,9 @@
 
 */
 
+#include <map>
+#include <string>
+
 #include <SFML/Graphics/Color.hpp>
 
 namespace hle
@@ -110,7 +113,7 @@ namespace hle
 		hle_sfml_color(Aquamarine, 127, 255, 212);
 		hle_sfml_color(Turquoise, 64, 224, 208);
 		hle_sfml_color(MediumTurquoise, 72, 209, 204);
-		hle_sfml_color(DarkTurquiose, 0, 206, 209);
+		hle_sfml_color(DarkTurquoise, 0, 206, 209);
 		hle_sfml_color(CadetBlue, 95, 158, 160);
 		hle_sfml_color(SteelBlue, 70, 130, 180);
 		hle_sfml_color(LightSteelBlue, 176, 196, 222);
@@ -178,5 +181,159 @@ namespace hle
 		hle_sfml_color(SlateGray, 112, 128, 144);
 		hle_sfml_color(DarkSlateGray, 47, 79, 79);
 		hle_sfml_color(Black, 0, 0, 0);
-	}
-}
+
+
+
+		namespace detail
+		{
+
+#define add_color(name) _color_map[#name] = name
+
+			static std::map<std::string, sf::Color> _color_map;
+
+			static void populate_color_map()
+			{
+				add_color(IndianRed);
+				add_color(LightCoral);
+				add_color(Salmon);
+				add_color(DarkSalmon);
+				add_color(LightSalmon);
+				add_color(Crimson);
+				add_color(Red);
+				add_color(FireBrick);
+				add_color(DarkRed);
+				add_color(Pink);
+				add_color(LightPink);
+				add_color(HotPink);
+				add_color(DeepPink);
+				add_color(MediumVioletRed);
+				add_color(PaleVioletRed);
+				add_color(Coral);
+				add_color(Tomato);
+				add_color(OrangeRed);
+				add_color(DarkOrange);
+				add_color(Orange);
+				add_color(Gold);
+				add_color(Yellow);
+				add_color(LightYellow);
+				add_color(LemonChiffon);
+				add_color(LightGoldenRodYellow);
+				add_color(PapayaWhip);
+				add_color(Moccasin);
+				add_color(PeachPuff);
+				add_color(PaleGoldenRod);
+				add_color(Khaki);
+				add_color(DarkKhaki);
+				add_color(Lavender);
+				add_color(Thistle);
+				add_color(Plum);
+				add_color(Violet);
+				add_color(Orchid);
+				add_color(Fuchsia);
+				add_color(Magenta);
+				add_color(MediumOrchid);
+				add_color(MediumPurple);
+				add_color(RebeccaPurple);
+				add_color(BlueViolet);
+				add_color(DarkViolet);
+				add_color(DarkOrchid);
+				add_color(DarkMagenta);
+				add_color(Purple);
+				add_color(Indigo);
+				add_color(SlateBlue);
+				add_color(DarkSlateBlue);
+				add_color(MediumSlateBlue);
+				add_color(GreenYellow);
+				add_color(Chartreuse);
+				add_color(LawnGreen);
+				add_color(Lime);
+				add_color(LimeGreen);
+				add_color(PaleGreen);
+				add_color(LightGreen);
+				add_color(MediumSpringGreen);
+				add_color(SeaGreen);
+				add_color(ForestGreen);
+				add_color(Green);
+				add_color(DarkGreen);
+				add_color(YellowGreen);
+				add_color(OliveDrab);
+				add_color(Olive);
+				add_color(DarkOliveGreen);
+				add_color(MediumAquamarine);
+				add_color(DarkSeaGreen);
+				add_color(LightSeaGreen);
+				add_color(DarkCyan);
+				add_color(Teal);
+				add_color(Aqua);
+				add_color(Cyan);
+				add_color(LightCyan);
+				add_color(PaleTurquoise);
+				add_color(Aquamarine);
+				add_color(Turquoise);
+				add_color(MediumTurquoise);
+				add_color(DarkTurquoise);
+				add_color(CadetBlue);
+				add_color(SteelBlue);
+				add_color(LightSteelBlue);
+				add_color(PowderBlue);
+				add_color(LightBlue);
+				add_color(SkyBlue);
+				add_color(LightSkyBlue);
+				add_color(DeepSkyBlue);
+				add_color(DodgerBlue);
+				add_color(CornflowerBlue);
+				add_color(MediumSlateBlue);
+				add_color(RoyalBlue);
+				add_color(Blue);
+				add_color(MediumBlue);
+				add_color(DarkBlue);
+				add_color(Navy);
+				add_color(MidnightBlue);
+				add_color(CornSilk);
+				add_color(BlanchedAlmond);
+				add_color(Bisque);
+				add_color(NavajoWhite);
+				add_color(Wheat);
+				add_color(Burlywood);
+				add_color(Tan);
+				add_color(RosyBrown);
+				add_color(SandyBrown);
+				add_color(GoldenRod);
+				add_color(DarkGoldenRod);
+				add_color(Peru);
+				add_color(Chocolate);
+				add_color(SaddleBrown);
+				add_color(Sienna);
+				add_color(Brown);
+				add_color(Maroon);
+				add_color(White);
+				add_color(Snow);
+				add_color(HoneyDew);
+				add_color(MintCream);
+				add_color(Azure);
+				add_color(AliceBlue);
+				add_color(GhostWhite);
+				add_color(WhiteSmoke);
+				add_color(Seashell);
+				add_color(Biege);
+				add_color(Oldlace);
+				add_color(FloralWhite);
+				add_color(Ivory);
+				add_color(AntiqueWhite);
+				add_color(Linen);
+				add_color(LavenderBlush);
+				add_color(MistyRose);
+				add_color(Gainsboro);
+				add_color(LightGray);
+				add_color(Silver);
+				add_color(DarkGray);
+				add_color(Gray);
+				add_color(DimGray);
+				add_color(LightSlateGray);
+				add_color(SlateGray);
+				add_color(DarkSlateGray);
+				add_color(Black);
+			}
+		}
+	} // color
+} // hle

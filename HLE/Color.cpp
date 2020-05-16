@@ -1,5 +1,10 @@
 #include "Color.hpp"
 
+#include <map>
+#include <string>
+
+#include "Utility.hpp"
+
 namespace hle
 {
 	namespace color
@@ -131,7 +136,7 @@ namespace hle
 				add(Aquamarine);
 				add(Turquoise);
 				add(MediumTurquoise);
-				add(DarkTurquiose);
+				add(DarkTurquoise);
 				add(CadetBlue);
 				add(SteelBlue);
 				add(LightSteelBlue);
@@ -205,6 +210,17 @@ namespace hle
 			}
 #undef add
 			return ret;
+		}
+
+		sf::Color byName(const std::string name)
+		{
+			if (detail::_color_map.empty())
+				detail::populate_color_map();
+
+			if (hle::util::contains(detail::_color_map, name))
+				return detail::_color_map[name];
+			else
+				return sf::Color();
 		}
 
 	}
