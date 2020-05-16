@@ -40,6 +40,15 @@
     <Filter Include="Header Files\vector\detail">
       <UniqueIdentifier>{eb344b20-3b6f-4a3b-9075-dee877f8c84c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\core">
+      <UniqueIdentifier>{a43228fc-0d1b-443c-b058-c9efe9ee242d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core">
+      <UniqueIdentifier>{2e09752d-f7b3-4b8d-8776-14fc05b1f5ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\detail">
+      <UniqueIdentifier>{45569266-8b9e-49ee-98e6-9577689c0e1a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -80,6 +89,12 @@
     </ClCompile>
     <ClCompile Include="math\Math.cpp">
       <Filter>Header Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Application.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\ResourceManager.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +152,12 @@
     <ClInclude Include="math\Math.hpp">
       <Filter>Header Files\math</Filter>
     </ClInclude>
+    <ClInclude Include="core\Application.hpp">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\ResourceManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Utility.inl">
@@ -150,6 +171,9 @@
     </None>
     <None Include="vector\detail\Vector2.inl">
       <Filter>Header Files\vector\detail</Filter>
+    </None>
+    <None Include="core\detail\ResourceManager.inl">
+      <Filter>Header Files\core\detail</Filter>
     </None>
   </ItemGroup>
 </Project>

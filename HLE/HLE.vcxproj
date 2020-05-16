@@ -126,6 +126,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Color.cpp" />
+    <ClCompile Include="core\Application.cpp" />
+    <ClCompile Include="core\ResourceManager.cpp" />
     <ClCompile Include="imgui\imgui-SFML.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_demo.cpp" />
@@ -143,6 +145,8 @@
     <ClInclude Include="Color.hpp" />
     <ClInclude Include="Colordef.hpp" />
     <ClInclude Include="Common.hpp" />
+    <ClInclude Include="core\Application.hpp" />
+    <ClInclude Include="core\ResourceManager.hpp" />
     <ClInclude Include="imgui\imconfig-SFML.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui-SFML.h" />
@@ -160,6 +164,7 @@
     <ClInclude Include="VideoMode.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="core\detail\ResourceManager.inl" />
     <None Include="math\detail\Math.inl" />
     <None Include="Utility.inl" />
     <None Include="vector\detail\Vector2.inl" />
