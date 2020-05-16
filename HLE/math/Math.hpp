@@ -48,4 +48,4 @@ namespace hle
 	}
 }
 
-#include "Math.inl"
+#include "detail/Math.inl"

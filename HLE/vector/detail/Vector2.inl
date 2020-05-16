@@ -2,9 +2,8 @@
 
 #include <cassert>
 #include <sstream>
-#include "Vector2.hpp"
 
-#include "Math.hpp"
+#include "../math/Math.hpp"
 
 namespace hle
 {

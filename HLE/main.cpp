@@ -5,8 +5,8 @@
 
 #include <SFML/Window/VideoMode.hpp>
 #include "VideoMode.hpp"
-#include "Vector2.hpp"
-#include "Math.hpp"
+#include "vector/Vector2.hpp"
+#include "math/Math.hpp"
 #include <SFML/System/Vector2.hpp>
 
 int main()

@@ -16,6 +16,30 @@
     <Filter Include="Header Files\imgui">
       <UniqueIdentifier>{1774cc8d-dbc3-4557-a2e2-be6976466270}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\vector">
+      <UniqueIdentifier>{20c73464-a321-4780-86d6-c6a6780d3378}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vector">
+      <UniqueIdentifier>{02de803b-348e-49f9-bac6-21771f942163}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\input">
+      <UniqueIdentifier>{21f3967a-1918-4448-83b8-d487c00ffad2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\input">
+      <UniqueIdentifier>{08a2a3bd-895e-427a-aa6b-7d8b781e5bda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\math">
+      <UniqueIdentifier>{b5985614-6ba5-4d8d-a631-397f1cc10502}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\math">
+      <UniqueIdentifier>{b1ac25bb-d251-4d94-85dd-bc169d73b0f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\math\detail">
+      <UniqueIdentifier>{847853e2-257a-4b90-9d61-5913cf58ffcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\vector\detail">
+      <UniqueIdentifier>{eb344b20-3b6f-4a3b-9075-dee877f8c84c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -42,20 +66,20 @@
     <ClCompile Include="Utility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Vector2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Input.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Keyboard.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="VideoMode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Math.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="vector\Vector2.cpp">
+      <Filter>Source Files\vector</Filter>
+    </ClCompile>
+    <ClCompile Include="input\Keyboard.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
+    <ClCompile Include="input\Input.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
+    <ClCompile Include="math\Math.cpp">
+      <Filter>Header Files\math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -98,31 +122,34 @@
     <ClInclude Include="Utility.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Vector2.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Input.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Keyboard.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="VideoMode.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Math.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="vector\Vector2.hpp">
+      <Filter>Header Files\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="input\Input.hpp">
+      <Filter>Header Files\input</Filter>
+    </ClInclude>
+    <ClInclude Include="input\Keyboard.hpp">
+      <Filter>Header Files\input</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Math.hpp">
+      <Filter>Header Files\math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Utility.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="Vector2.inl">
-      <Filter>Header Files</Filter>
+    <None Include="vector\Vector2.inl">
+      <Filter>Header Files\vector</Filter>
     </None>
-    <None Include="Math.inl">
-      <Filter>Header Files</Filter>
+    <None Include="math\detail\Math.inl">
+      <Filter>Header Files\math\detail</Filter>
+    </None>
+    <None Include="vector\detail\Vector2.inl">
+      <Filter>Header Files\vector\detail</Filter>
     </None>
   </ItemGroup>
 </Project>

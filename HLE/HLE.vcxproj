@@ -131,12 +131,12 @@
     <ClCompile Include="imgui\imgui_demo.cpp" />
     <ClCompile Include="imgui\imgui_draw.cpp" />
     <ClCompile Include="imgui\imgui_widgets.cpp" />
-    <ClCompile Include="Input.cpp" />
-    <ClCompile Include="Keyboard.cpp" />
+    <ClCompile Include="input\Input.cpp" />
+    <ClCompile Include="input\Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Math.cpp" />
+    <ClCompile Include="math\Math.cpp" />
     <ClCompile Include="Utility.cpp" />
-    <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="vector\Vector2.cpp" />
     <ClCompile Include="VideoMode.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -152,17 +152,18 @@
     <ClInclude Include="imgui\imstb_rectpack.h" />
     <ClInclude Include="imgui\imstb_textedit.h" />
     <ClInclude Include="imgui\imstb_truetype.h" />
-    <ClInclude Include="Input.hpp" />
-    <ClInclude Include="Keyboard.hpp" />
-    <ClInclude Include="Math.hpp" />
+    <ClInclude Include="input\Input.hpp" />
+    <ClInclude Include="input\Keyboard.hpp" />
+    <ClInclude Include="math\Math.hpp" />
     <ClInclude Include="Utility.hpp" />
-    <ClInclude Include="Vector2.hpp" />
+    <ClInclude Include="vector\Vector2.hpp" />
     <ClInclude Include="VideoMode.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Math.inl" />
+    <None Include="math\detail\Math.inl" />
     <None Include="Utility.inl" />
-    <None Include="Vector2.inl" />
+    <None Include="vector\detail\Vector2.inl" />
+    <None Include="vector\Vector2.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

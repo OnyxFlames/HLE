@@ -84,4 +84,4 @@ namespace hle
 
 }
 
-#include "Vector2.inl"
+#include "detail/Vector2.inl"
