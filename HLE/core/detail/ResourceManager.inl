@@ -6,8 +6,8 @@
 
 namespace hle
 {
-	template<typename Resource, typename Identifer>
-	inline void ResourceManager<Resource, Identifer>::load(Identifer id, const std::string& filename)
+	template<typename Resource, typename Identifier>
+	inline void ResourceManager<Resource, Identifier>::load(Identifier id, const std::string& filename)
 	{
 		std::unique_ptr<Resource> resource(new Resource());
 		if (!resource->loadFromFile(filename))
@@ -18,9 +18,9 @@ namespace hle
 		assert(inserted.second);
 	}
 
-	template<typename Resource, typename Identifer>
+	template<typename Resource, typename Identifier>
 	template<typename Parameter>
-	inline void ResourceManager<Resource, Identifer>::load(Identifer id, const std::string& filename, const Parameter& param)
+	inline void ResourceManager<Resource, Identifier>::load(Identifier id, const std::string& filename, const Parameter& param)
 	{
 		std::unique_ptr<Resource> resource(new Resource());
 		if (!resource->loadFromFile(filename, param))
