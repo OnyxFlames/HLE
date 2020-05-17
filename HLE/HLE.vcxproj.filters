@@ -70,6 +70,12 @@
     <Filter Include="Source Files\transform">
       <UniqueIdentifier>{2347208a-7605-41d5-ba5e-5c2a6e3f87cb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\entity">
+      <UniqueIdentifier>{944ca607-cd68-48d1-8408-5b16a19f5e68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entity">
+      <UniqueIdentifier>{d5078e41-8434-4fd3-b347-9c895b339cd5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -224,6 +230,12 @@
     </ClCompile>
     <ClCompile Include="transform\Transform.cpp">
       <Filter>Source Files\transform</Filter>
+    </ClCompile>
+    <ClCompile Include="entity\Entity.cpp">
+      <Filter>Source Files\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="entity\Spaceship.cpp">
+      <Filter>Source Files\entity</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -382,6 +394,12 @@
     </ClInclude>
     <ClInclude Include="transform\Transform.hpp">
       <Filter>Header Files\transform</Filter>
+    </ClInclude>
+    <ClInclude Include="entity\Entity.hpp">
+      <Filter>Header Files\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="entity\Spaceship.hpp">
+      <Filter>Header Files\entity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

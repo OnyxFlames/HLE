@@ -129,6 +129,8 @@
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="core\Application.cpp" />
     <ClCompile Include="core\ResourceManager.cpp" />
+    <ClCompile Include="entity\Entity.cpp" />
+    <ClCompile Include="entity\Spaceship.cpp" />
     <ClCompile Include="imgui\imgui-SFML.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_demo.cpp" />
@@ -185,6 +187,8 @@
     <ClInclude Include="core\Application.hpp" />
     <ClInclude Include="core\ResourceManager.hpp" />
     <ClInclude Include="Debug.hpp" />
+    <ClInclude Include="entity\Entity.hpp" />
+    <ClInclude Include="entity\Spaceship.hpp" />
     <ClInclude Include="imgui\imconfig-SFML.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui-SFML.h" />
