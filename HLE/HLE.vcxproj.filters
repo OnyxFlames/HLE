@@ -111,9 +111,6 @@
     <ClCompile Include="math\Math.cpp">
       <Filter>Source Files\math</Filter>
     </ClCompile>
-    <ClCompile Include="time\FramerateClock.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="lua\lua\lapi.c">
       <Filter>Header Files\lua\lua</Filter>
     </ClCompile>
@@ -213,6 +210,12 @@
     <ClCompile Include="lua\lua\lzio.c">
       <Filter>Header Files\lua\lua</Filter>
     </ClCompile>
+    <ClCompile Include="time\FramerateClock.cpp">
+      <Filter>Source Files\time</Filter>
+    </ClCompile>
+    <ClCompile Include="time\Time.cpp">
+      <Filter>Source Files\time</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="imgui\imconfig.h">
@@ -273,9 +276,6 @@
       <Filter>Header Files\core</Filter>
     </ClInclude>
     <ClInclude Include="core\ResourceManager.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="time\FramerateClock.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Debug.hpp">
@@ -364,6 +364,12 @@
     </ClInclude>
     <ClInclude Include="lua\lua\lua.h">
       <Filter>Header Files\lua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="time\FramerateClock.hpp">
+      <Filter>Header Files\time</Filter>
+    </ClInclude>
+    <ClInclude Include="time\Time.hpp">
+      <Filter>Header Files\time</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

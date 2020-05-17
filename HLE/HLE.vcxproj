@@ -172,6 +172,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="math\Math.cpp" />
     <ClCompile Include="time\FramerateClock.cpp" />
+    <ClCompile Include="time\Time.cpp" />
     <ClCompile Include="Utility.cpp" />
     <ClCompile Include="vector\Vector2.cpp" />
     <ClCompile Include="VideoMode.cpp" />
@@ -224,6 +225,7 @@
     <ClInclude Include="lua\sol\sol.hpp" />
     <ClInclude Include="math\Math.hpp" />
     <ClInclude Include="time\FramerateClock.hpp" />
+    <ClInclude Include="time\Time.hpp" />
     <ClInclude Include="Utility.hpp" />
     <ClInclude Include="vector\Vector2.hpp" />
     <ClInclude Include="VideoMode.hpp" />
