@@ -64,6 +64,12 @@
     <Filter Include="Header Files\lua\lua">
       <UniqueIdentifier>{683bc54e-9cd2-4c8e-b903-c159cd15479e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\transform">
+      <UniqueIdentifier>{c91e980e-06fa-4c0d-810b-b9e72feb79c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\transform">
+      <UniqueIdentifier>{2347208a-7605-41d5-ba5e-5c2a6e3f87cb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -215,6 +221,9 @@
     </ClCompile>
     <ClCompile Include="time\Time.cpp">
       <Filter>Source Files\time</Filter>
+    </ClCompile>
+    <ClCompile Include="transform\Transform.cpp">
+      <Filter>Source Files\transform</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -370,6 +379,9 @@
     </ClInclude>
     <ClInclude Include="time\Time.hpp">
       <Filter>Header Files\time</Filter>
+    </ClInclude>
+    <ClInclude Include="transform\Transform.hpp">
+      <Filter>Header Files\transform</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
