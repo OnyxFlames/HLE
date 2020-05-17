@@ -6,10 +6,12 @@
 
 #include "../time/FramerateClock.hpp"
 
+#include "../vector/Vector2.hpp"
+
 namespace hle
 {
 
-	const sf::Time Application::TimePerFrame = sf::seconds(1.f / 1.44f);
+	const sf::Time Application::TimePerFrame = sf::seconds(1.f / 144.f);
 
 	Application::Application()
 		: mWindow(sf::VideoMode(720, 640), "HLE - Hierarch Labs Engine")
@@ -34,7 +36,6 @@ namespace hle
 			if (mFrameClock.update())
 				mFPSText.setString("FPS: " + std::to_string(mFrameClock.getFramerate()));
 #endif
-				
 			while (lastUpdate > TimePerFrame)
 			{
 				lastUpdate -= TimePerFrame;
@@ -68,6 +69,7 @@ namespace hle
 
 	void Application::update(sf::Time dt)
 	{
+
 	}
 
 	void Application::render()
