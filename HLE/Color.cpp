@@ -5,6 +5,7 @@
 
 #include "Utility.hpp"
 
+
 namespace hle
 {
 	namespace color

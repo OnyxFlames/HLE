@@ -12,8 +12,13 @@ namespace hle
 	const sf::Time Application::TimePerFrame = sf::seconds(1.f / 1.44f);
 
 	Application::Application()
-		: mWindow(sf::VideoMode(640, 480), "HLE - Hierarch Labs Engine")
+		: mWindow(sf::VideoMode(720, 640), "HLE - Hierarch Labs Engine")
 	{
+#if defined(DEBUG_FPS_INFO)
+		mDebugFont.loadFromFile("../resources/fonts/Kenney Future.ttf");
+		mFPSText.setFont(mDebugFont);
+		mFPSText.setScale({0.45f, 0.45f});
+#endif
 	}
 
 	void Application::run()
@@ -25,8 +30,11 @@ namespace hle
 		{
 			processEvents();
 			lastUpdate += runtime.restart();
+#if defined(DEBUG_FPS_INFO)
 			if (mFrameClock.update())
-				printf("FPS: %d\n", mFrameClock.getFramerate());
+				mFPSText.setString("FPS: " + std::to_string(mFrameClock.getFramerate()));
+#endif
+				
 			while (lastUpdate > TimePerFrame)
 			{
 				lastUpdate -= TimePerFrame;
@@ -66,6 +74,9 @@ namespace hle
 	{
 		mWindow.clear();
 
+#if defined(DEBUG_FPS_INFO)
+		mWindow.draw(mFPSText);
+#endif
 		mWindow.display();
 	}
 

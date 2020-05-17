@@ -148,6 +148,7 @@
     <ClInclude Include="Common.hpp" />
     <ClInclude Include="core\Application.hpp" />
     <ClInclude Include="core\ResourceManager.hpp" />
+    <ClInclude Include="Debug.hpp" />
     <ClInclude Include="imgui\imconfig-SFML.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui-SFML.h" />
