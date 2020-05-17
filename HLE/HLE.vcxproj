@@ -78,6 +78,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\SFML\SFML-2.5.1-32bit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\SFML\SFML-2.5.1-32bit\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -135,6 +136,39 @@
     <ClCompile Include="imgui\imgui_widgets.cpp" />
     <ClCompile Include="input\Input.cpp" />
     <ClCompile Include="input\Keyboard.cpp" />
+    <ClCompile Include="lua\lua\lapi.c" />
+    <ClCompile Include="lua\lua\lauxlib.c" />
+    <ClCompile Include="lua\lua\lbaselib.c" />
+    <ClCompile Include="lua\lua\lbitlib.c" />
+    <ClCompile Include="lua\lua\lcode.c" />
+    <ClCompile Include="lua\lua\lcorolib.c" />
+    <ClCompile Include="lua\lua\lctype.c" />
+    <ClCompile Include="lua\lua\ldblib.c" />
+    <ClCompile Include="lua\lua\ldebug.c" />
+    <ClCompile Include="lua\lua\ldo.c" />
+    <ClCompile Include="lua\lua\ldump.c" />
+    <ClCompile Include="lua\lua\lfunc.c" />
+    <ClCompile Include="lua\lua\lgc.c" />
+    <ClCompile Include="lua\lua\linit.c" />
+    <ClCompile Include="lua\lua\liolib.c" />
+    <ClCompile Include="lua\lua\llex.c" />
+    <ClCompile Include="lua\lua\lmathlib.c" />
+    <ClCompile Include="lua\lua\lmem.c" />
+    <ClCompile Include="lua\lua\loadlib.c" />
+    <ClCompile Include="lua\lua\lobject.c" />
+    <ClCompile Include="lua\lua\lopcodes.c" />
+    <ClCompile Include="lua\lua\loslib.c" />
+    <ClCompile Include="lua\lua\lparser.c" />
+    <ClCompile Include="lua\lua\lstate.c" />
+    <ClCompile Include="lua\lua\lstring.c" />
+    <ClCompile Include="lua\lua\lstrlib.c" />
+    <ClCompile Include="lua\lua\ltable.c" />
+    <ClCompile Include="lua\lua\ltablib.c" />
+    <ClCompile Include="lua\lua\ltm.c" />
+    <ClCompile Include="lua\lua\lundump.c" />
+    <ClCompile Include="lua\lua\lutf8lib.c" />
+    <ClCompile Include="lua\lua\lvm.c" />
+    <ClCompile Include="lua\lua\lzio.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="math\Math.cpp" />
     <ClCompile Include="time\FramerateClock.cpp" />
@@ -160,6 +194,34 @@
     <ClInclude Include="imgui\imstb_truetype.h" />
     <ClInclude Include="input\Input.hpp" />
     <ClInclude Include="input\Keyboard.hpp" />
+    <ClInclude Include="lua\lua\lapi.h" />
+    <ClInclude Include="lua\lua\lauxlib.h" />
+    <ClInclude Include="lua\lua\lcode.h" />
+    <ClInclude Include="lua\lua\lctype.h" />
+    <ClInclude Include="lua\lua\ldebug.h" />
+    <ClInclude Include="lua\lua\ldo.h" />
+    <ClInclude Include="lua\lua\lfunc.h" />
+    <ClInclude Include="lua\lua\lgc.h" />
+    <ClInclude Include="lua\lua\llex.h" />
+    <ClInclude Include="lua\lua\llimits.h" />
+    <ClInclude Include="lua\lua\lmem.h" />
+    <ClInclude Include="lua\lua\lobject.h" />
+    <ClInclude Include="lua\lua\lopcodes.h" />
+    <ClInclude Include="lua\lua\lparser.h" />
+    <ClInclude Include="lua\lua\lprefix.h" />
+    <ClInclude Include="lua\lua\lstate.h" />
+    <ClInclude Include="lua\lua\lstring.h" />
+    <ClInclude Include="lua\lua\ltable.h" />
+    <ClInclude Include="lua\lua\ltm.h" />
+    <ClInclude Include="lua\lua\lua.h" />
+    <ClInclude Include="lua\lua\lua.hpp" />
+    <ClInclude Include="lua\lua\luaconf.h" />
+    <ClInclude Include="lua\lua\lualib.h" />
+    <ClInclude Include="lua\lua\lundump.h" />
+    <ClInclude Include="lua\lua\lvm.h" />
+    <ClInclude Include="lua\lua\lzio.h" />
+    <ClInclude Include="lua\sol\forward.hpp" />
+    <ClInclude Include="lua\sol\sol.hpp" />
     <ClInclude Include="math\Math.hpp" />
     <ClInclude Include="time\FramerateClock.hpp" />
     <ClInclude Include="Utility.hpp" />
@@ -168,6 +230,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="core\detail\ResourceManager.inl" />
+    <None Include="lua\lua\Makefile" />
     <None Include="math\detail\Math.inl" />
     <None Include="Utility.inl" />
     <None Include="vector\detail\Vector2.inl" />
