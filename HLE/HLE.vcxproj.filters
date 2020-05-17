@@ -76,6 +76,12 @@
     <Filter Include="Source Files\entity">
       <UniqueIdentifier>{d5078e41-8434-4fd3-b347-9c895b339cd5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\scene">
+      <UniqueIdentifier>{527a65dc-20ea-44d9-9434-aa6a1d50338b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene">
+      <UniqueIdentifier>{ddcc2e71-6661-427a-ba41-446dc759f688}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -236,6 +242,9 @@
     </ClCompile>
     <ClCompile Include="entity\Spaceship.cpp">
       <Filter>Source Files\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\SceneNode.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -400,6 +409,9 @@
     </ClInclude>
     <ClInclude Include="entity\Spaceship.hpp">
       <Filter>Header Files\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\SceneNode.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -2,9 +2,11 @@
 
 #include <SFML/System/Vector2.hpp>
 
+#include "../scene/SceneNode.hpp"
+
 namespace hle
 {
-	class Entity
+	class Entity : public SceneNode
 	{
 	private:
 		static size_t mIDCounter;

@@ -19,6 +19,24 @@ namespace hle
 	}
 
 	template<typename Resource, typename Identifier>
+	inline Resource& ResourceManager<Resource, Identifier>::get(Identifier id)
+	{
+		auto& found = mResourceMap.find(id);
+		assert(found != mResourceMap.end());
+
+		return *found->second;
+	}
+
+	template<typename Resource, typename Identifier>
+	inline const Resource& ResourceManager<Resource, Identifier>::get(Identifier id) const
+	{
+		auto& found = mResourceMap.find(id);
+		assert(found != mResourceMap.end());
+
+		return *found->second;
+	}
+
+	template<typename Resource, typename Identifier>
 	template<typename Parameter>
 	inline void ResourceManager<Resource, Identifier>::load(Identifier id, const std::string& filename, const Parameter& param)
 	{
@@ -31,22 +49,4 @@ namespace hle
 		assert(inserted.second);
 	}
 
-
-	template<typename Resource, typename Identifer>
-	inline Resource& ResourceManager<Resource, Identifer>::get(Identifer id)
-	{
-		auto& found = mResourceMap.find(id);
-		assert(found != mResourceMap.end());
-
-		return *found->second;
-	}
-
-	template<typename Resource, typename Identifer>
-	inline const Resource& ResourceManager<Resource, Identifer>::get(Identifer id) const
-	{
-		auto& found = mResourceMap.find(id);
-		assert(found != mResourceMap.end());
-
-		return *found->second;
-	}
 }

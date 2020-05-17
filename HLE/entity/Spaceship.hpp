@@ -2,6 +2,10 @@
 
 #include "Entity.hpp"
 
+#include <SFML/Graphics/Sprite.hpp>
+
+#include "../core/ResourceManager.hpp"
+
 namespace hle
 {
 	class Spaceship : public Entity
@@ -9,23 +13,25 @@ namespace hle
 	public:
 		enum class Type
 		{
+			UnknownShip = -1,
+
 			// friendly
-			PlayerBlue_1,
-			PlayerGreen_1,
-			PlayerOrange_1,
-			PlayerRed_1,
-			PlayerBlue_2,
-			PlayerGreen_2,
-			PlayerOrange_2,
-			PlayerRed_2,
-			PlayerBlue_3,
-			PlayerGreen_3,
-			PlayerOrange_3,
-			PlayerRed_3,
-			PlayerBlue_4,
-			PlayerGreen_4,
-			PlayerOrange_4,
-			PlayerRed_4,
+			FriendlyBlue_1,
+			FriendlyGreen_1,
+			FriendlyOrange_1,
+			FriendlyRed_1,
+			FriendlyBlue_2,
+			FriendlyGreen_2,
+			FriendlyOrange_2,
+			FriendlyRed_2,
+			FriendlyBlue_3,
+			FriendlyGreen_3,
+			FriendlyOrange_3,
+			FriendlyRed_3,
+			FriendlyBlue_4,
+			FriendlyGreen_4,
+			FriendlyOrange_4,
+			FriendlyRed_4,
 			// hostile
 			HostileBlack_1,
 			HostileBlue_1,
@@ -52,9 +58,12 @@ namespace hle
 		};
 
 	public:
-		explicit Spaceship(Type type);
+		explicit Spaceship(Type type, const hle::TextureManager& textures);
 
+
+		virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
 	private:
 		Type mType;
+		sf::Sprite mSprite;
 	};
 }
