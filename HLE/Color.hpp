@@ -4,8 +4,7 @@
 
 #include "Common.hpp"
 
-#include "Colordef.hpp"
-
+#include <string>
 #include <vector>
 
 namespace hle
