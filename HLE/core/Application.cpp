@@ -4,6 +4,8 @@
 
 #include "../Common.hpp"
 
+#include "../time/FramerateClock.hpp"
+
 namespace hle
 {
 
@@ -18,10 +20,13 @@ namespace hle
 	{
 		sf::Clock runtime;
 		sf::Time lastUpdate = sf::Time::Zero;
+		hle::time::FramerateClock mFrameClock;
 		while (mWindow.isOpen())
 		{
 			processEvents();
 			lastUpdate += runtime.restart();
+			if (mFrameClock.update())
+				printf("FPS: %d\n", mFrameClock.getFramerate());
 			while (lastUpdate > TimePerFrame)
 			{
 				lastUpdate -= TimePerFrame;

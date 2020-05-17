@@ -137,6 +137,7 @@
     <ClCompile Include="input\Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="math\Math.cpp" />
+    <ClCompile Include="time\FramerateClock.cpp" />
     <ClCompile Include="Utility.cpp" />
     <ClCompile Include="vector\Vector2.cpp" />
     <ClCompile Include="VideoMode.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="input\Input.hpp" />
     <ClInclude Include="input\Keyboard.hpp" />
     <ClInclude Include="math\Math.hpp" />
+    <ClInclude Include="time\FramerateClock.hpp" />
     <ClInclude Include="Utility.hpp" />
     <ClInclude Include="vector\Vector2.hpp" />
     <ClInclude Include="VideoMode.hpp" />

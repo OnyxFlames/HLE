@@ -11,7 +11,6 @@ namespace hle
 	public:
 		static const sf::Time TimePerFrame;
 
-
 		Application();
 		void run();
 

@@ -49,6 +49,12 @@
     <Filter Include="Header Files\core\detail">
       <UniqueIdentifier>{45569266-8b9e-49ee-98e6-9577689c0e1a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\time">
+      <UniqueIdentifier>{778454a8-96f9-4d4b-b41c-13042ee20f6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\time">
+      <UniqueIdentifier>{b5c3e3bf-f949-41e2-adba-769975d0c0b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -87,13 +93,16 @@
     <ClCompile Include="input\Input.cpp">
       <Filter>Source Files\input</Filter>
     </ClCompile>
-    <ClCompile Include="math\Math.cpp">
-      <Filter>Header Files\math</Filter>
-    </ClCompile>
     <ClCompile Include="core\Application.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
     <ClCompile Include="core\ResourceManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="math\Math.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="time\FramerateClock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -156,6 +165,9 @@
       <Filter>Header Files\core</Filter>
     </ClInclude>
     <ClInclude Include="core\ResourceManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="time\FramerateClock.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
