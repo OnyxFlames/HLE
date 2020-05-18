@@ -30,6 +30,28 @@ namespace hle
 			return static_cast<uint32_t>(lhs) | static_cast<uint32_t>(rhs);
 		}
 
+		sf::Color inverted(const sf::Color& color)
+		{
+			return sf::Color
+			(
+				255 - color.r,
+				255 - color.g,
+				255 - color.b,
+				color.a
+			);
+		}
+
+		sf::Color contrasted(const sf::Color& color)
+		{
+			float r = color.r / 255.f, g = color.g / 255.f, b = color.b / 255.f;
+			return sf::Color
+			(
+				static_cast<uint8_t>(std::fmod(r + 0.5f, 1.0f) * 255),
+				static_cast<uint8_t>(std::fmod(g + 0.5f, 1.0f) * 255),
+				static_cast<uint8_t>(std::fmod(b + 0.5f, 1.0f) * 255),
+				color.a
+			);
+		}
 
 		std::vector<sf::Color> getColors(uint32_t colors)
 		{
