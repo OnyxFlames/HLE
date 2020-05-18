@@ -23,4 +23,8 @@ namespace hle
 	{
 		return mID;
 	}
+	void Entity::updateCurrent(sf::Time dt)
+	{
+		move(mVelocity * dt.asSeconds());
+	}
 }

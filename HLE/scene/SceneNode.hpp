@@ -3,12 +3,20 @@
 #include <vector>
 #include <memory>
 
+#include <SFML/System/Time.hpp>
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/Transformable.hpp>
 #include <SFML/System/NonCopyable.hpp>
 
 namespace hle
 {
+	enum SceneLayer
+	{
+		Background,
+		Air,
+		LayerCount,
+	};
+
 	class SceneNode
 		: public sf::Transformable
 		, public sf::Drawable
@@ -22,6 +30,11 @@ namespace hle
 
 		void attachChild(Ptr child);
 		Ptr detachChild(const SceneNode& node);
+
+		void update(sf::Time dt);
+
+		sf::Vector2f getWorldPosition() const;
+		sf::Transform getWorldTransform() const;
 	private:
 		std::vector<Ptr> mChildren;
 		SceneNode* mParent;
@@ -29,5 +42,8 @@ namespace hle
 	private:
 		virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 		virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
+
+		virtual void updateCurrent(sf::Time dt);
+		void updateChildren(sf::Time dt);
 	};
 }

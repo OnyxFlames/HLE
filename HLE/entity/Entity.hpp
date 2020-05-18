@@ -21,5 +21,7 @@ namespace hle
 		const sf::Vector2f getVelocity() const;
 
 		const size_t getID() const;
+	private:
+		virtual void updateCurrent(sf::Time dt);
 	};
 }

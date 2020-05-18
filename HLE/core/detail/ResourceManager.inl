@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cassert>
 #include <stdexcept>
 
 #include "../ResourceManager.hpp"
@@ -21,7 +22,7 @@ namespace hle
 	template<typename Resource, typename Identifier>
 	inline Resource& ResourceManager<Resource, Identifier>::get(Identifier id)
 	{
-		auto& found = mResourceMap.find(id);
+		auto found = mResourceMap.find(id);
 		assert(found != mResourceMap.end());
 
 		return *found->second;
@@ -30,7 +31,7 @@ namespace hle
 	template<typename Resource, typename Identifier>
 	inline const Resource& ResourceManager<Resource, Identifier>::get(Identifier id) const
 	{
-		auto& found = mResourceMap.find(id);
+		auto found = mResourceMap.find(id);
 		assert(found != mResourceMap.end());
 
 		return *found->second;

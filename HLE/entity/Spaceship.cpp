@@ -1,6 +1,7 @@
 #include "Spaceship.hpp"
 
 #include <string>
+#include <SFML/Graphics/RenderTarget.hpp>
 
 namespace hle
 {
@@ -25,9 +26,12 @@ namespace hle
 	}
 	Spaceship::Spaceship(Type type, const hle::TextureManager& textures)
 		:	mType(type)
+		,	mSprite(textures.get(toTextureID(type)))
 	{
+
 	}
 	void Spaceship::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const
 	{
+		target.draw(mSprite, states);
 	}
 }

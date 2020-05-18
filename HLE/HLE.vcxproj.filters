@@ -244,7 +244,10 @@
       <Filter>Source Files\entity</Filter>
     </ClCompile>
     <ClCompile Include="scene\SceneNode.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\SpriteNode.cpp">
+      <Filter>Source Files\scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -411,7 +414,10 @@
       <Filter>Header Files\entity</Filter>
     </ClInclude>
     <ClInclude Include="scene\SceneNode.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\SpriteNode.hpp">
+      <Filter>Header Files\scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
