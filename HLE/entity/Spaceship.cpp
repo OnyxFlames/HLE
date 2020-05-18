@@ -3,6 +3,8 @@
 #include <string>
 #include <SFML/Graphics/RenderTarget.hpp>
 
+#include "../transform/Transform.hpp"
+
 namespace hle
 {
 
@@ -28,7 +30,7 @@ namespace hle
 		:	mType(type)
 		,	mSprite(textures.get(toTextureID(type)))
 	{
-
+		center_origin(mSprite);
 	}
 	void Spaceship::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const
 	{

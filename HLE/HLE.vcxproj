@@ -181,6 +181,8 @@
     <ClCompile Include="Utility.cpp" />
     <ClCompile Include="vector\Vector2.cpp" />
     <ClCompile Include="VideoMode.cpp" />
+    <ClCompile Include="View.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Color.hpp" />
@@ -239,6 +241,8 @@
     <ClInclude Include="Utility.hpp" />
     <ClInclude Include="vector\Vector2.hpp" />
     <ClInclude Include="VideoMode.hpp" />
+    <ClInclude Include="View.hpp" />
+    <ClInclude Include="World.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="core\detail\ResourceManager.inl" />

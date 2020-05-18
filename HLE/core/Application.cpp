@@ -14,7 +14,8 @@ namespace hle
 	const sf::Time Application::TimePerFrame = sf::seconds(1.f / 144.f);
 
 	Application::Application()
-		: mWindow(sf::VideoMode(720, 640), "HLE - Hierarch Labs Engine")
+		: mWindow(sf::VideoMode(1280, 960), "HLE - Hierarch Labs Engine")
+		, mWorld(mWindow)
 	{
 #if defined(DEBUG_FPS_INFO)
 		mDebugFont.loadFromFile("../resources/fonts/Kenney Future.ttf");
@@ -69,12 +70,14 @@ namespace hle
 
 	void Application::update(sf::Time dt)
 	{
-
+		mWorld.update(dt);
 	}
 
 	void Application::render()
 	{
 		mWindow.clear();
+		mWorld.draw();
+		mWindow.setView(mWindow.getDefaultView());
 
 #if defined(DEBUG_FPS_INFO)
 		mWindow.draw(mFPSText);

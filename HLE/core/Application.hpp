@@ -5,6 +5,8 @@
 
 #include "../Debug.hpp"
 
+#include "../World.hpp"
+
 #if defined(DEBUG_FPS_INFO)
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Text.hpp>
@@ -24,6 +26,7 @@ namespace hle
 		sf::Font mDebugFont;
 		sf::Text mFPSText;
 #endif
+		World mWorld;
 	private:
 		void processEvents();
 		void update(sf::Time dt);

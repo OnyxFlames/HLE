@@ -6,8 +6,14 @@
 
 int main()
 {
-	hle::Application app;
-
-	app.run();
+	try
+	{
+		hle::Application app;
+		app.run();
+	}
+	catch (std::exception& e)
+	{
+		printf("Engine Exception: %s\n", e.what());
+	}
 	return 0;
 }

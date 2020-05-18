@@ -14,7 +14,20 @@ namespace hle
 		if (!resource->loadFromFile(filename))
 			throw std::runtime_error("ResourceHolder::load - Failed to load " + filename);
 
-		auto& inserted = mResourceMap.insert(std::make_pair(id, std::move(resource)));
+		auto inserted = mResourceMap.insert(std::make_pair(id, std::move(resource)));
+
+		assert(inserted.second);
+	}
+
+	template<typename Resource, typename Identifier>
+	template<typename Parameter>
+	inline void ResourceManager<Resource, Identifier>::load(Identifier id, const std::string& filename, const Parameter& param)
+	{
+		std::unique_ptr<Resource> resource(new Resource());
+		if (!resource->loadFromFile(filename, param))
+			throw std::runtime_error("ResourceHolder::load - Failed to load " + filename);
+
+		auto inserted = mResourceMap.insert(std::make_pair(id, std::move(resource)));
 
 		assert(inserted.second);
 	}
@@ -37,17 +50,6 @@ namespace hle
 		return *found->second;
 	}
 
-	template<typename Resource, typename Identifier>
-	template<typename Parameter>
-	inline void ResourceManager<Resource, Identifier>::load(Identifier id, const std::string& filename, const Parameter& param)
-	{
-		std::unique_ptr<Resource> resource(new Resource());
-		if (!resource->loadFromFile(filename, param))
-			throw std::runtime_error("ResourceHolder::load - Failed to load " + filename);
 
-		auto& inserted = mResourceMap.insert(std::make_pair(id, std::move(resource)));
-
-		assert(inserted.second);
-	}
 
 }
