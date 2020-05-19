@@ -8,8 +8,13 @@
 #include <SFML/Graphics/Transformable.hpp>
 #include <SFML/System/NonCopyable.hpp>
 
+#include "../command/Category.hpp"
+
 namespace hle
 {
+	struct Command;
+
+
 	enum SceneLayer
 	{
 		Background,
@@ -35,6 +40,9 @@ namespace hle
 
 		sf::Vector2f getWorldPosition() const;
 		sf::Transform getWorldTransform() const;
+
+		virtual Category::Type getCategory() const;
+		void onCommand(const Command& command, sf::Time dt);
 	private:
 		std::vector<Ptr> mChildren;
 		SceneNode* mParent;

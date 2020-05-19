@@ -6,8 +6,12 @@
 
 #include "../core/ResourceManager.hpp"
 
+#include "../command/Category.hpp"
+
 namespace hle
 {
+
+
 	class Spaceship : public Entity
 	{
 	public:
@@ -60,10 +64,32 @@ namespace hle
 	public:
 		explicit Spaceship(Type type, const hle::TextureManager& textures);
 
+		void accelerate(const sf::Vector2f velocity);
 
-		virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
+		virtual Category::Type getCategory() const;
 	private:
 		Type mType;
 		sf::Sprite mSprite;
+
+	private:
+		virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
 	};
+
+	struct SpaceshipMover
+	{
+		sf::Vector2f velocity;
+
+		SpaceshipMover(sf::Vector2f vel)
+			: velocity(vel)
+		{ }
+		SpaceshipMover(float vx, float vy)
+			: velocity(vx, vy)
+		{ }
+
+		void operator() (Spaceship& spaceship, sf::Time dt) const
+		{
+			spaceship.accelerate(velocity * dt.asSeconds());
+		}
+	};
+
 }

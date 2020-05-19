@@ -127,6 +127,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Color.cpp" />
+    <ClCompile Include="command\Category.cpp" />
+    <ClCompile Include="command\Command.cpp" />
+    <ClCompile Include="command\CommandQueue.cpp" />
     <ClCompile Include="core\Application.cpp" />
     <ClCompile Include="core\ResourceManager.cpp" />
     <ClCompile Include="entity\Entity.cpp" />
@@ -138,6 +141,7 @@
     <ClCompile Include="imgui\imgui_widgets.cpp" />
     <ClCompile Include="input\Input.cpp" />
     <ClCompile Include="input\Keyboard.cpp" />
+    <ClCompile Include="input\Player.cpp" />
     <ClCompile Include="lua\lua\lapi.c" />
     <ClCompile Include="lua\lua\lauxlib.c" />
     <ClCompile Include="lua\lua\lbaselib.c" />
@@ -187,6 +191,9 @@
   <ItemGroup>
     <ClInclude Include="Color.hpp" />
     <ClInclude Include="Colordef.hpp" />
+    <ClInclude Include="command\Category.hpp" />
+    <ClInclude Include="command\Command.hpp" />
+    <ClInclude Include="command\CommandQueue.hpp" />
     <ClInclude Include="Common.hpp" />
     <ClInclude Include="core\Application.hpp" />
     <ClInclude Include="core\ResourceManager.hpp" />
@@ -204,6 +211,7 @@
     <ClInclude Include="imgui\imstb_truetype.h" />
     <ClInclude Include="input\Input.hpp" />
     <ClInclude Include="input\Keyboard.hpp" />
+    <ClInclude Include="input\Player.hpp" />
     <ClInclude Include="lua\lua\lapi.h" />
     <ClInclude Include="lua\lua\lauxlib.h" />
     <ClInclude Include="lua\lua\lcode.h" />

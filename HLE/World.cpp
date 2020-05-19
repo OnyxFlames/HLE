@@ -21,12 +21,12 @@ namespace hle
 		loadTextures();
 		buildScene();
 		mWorldView.setCenter(mSpawnPosition);
+		mWorldView.setSize(1000, 1000);
 
 		assert(mPlayer && "Player entity is not valid");
 	}
 	void World::update(sf::Time dt)
 	{
-		mWorldView.move(0.f, mScrollSpeed * dt.asSeconds());
 #if defined(DEBUG_WORLD_VIEW_BUG)
 		printf("Player: %s ", to_string(mPlayer->getPosition()).c_str());
 		printf("World Bounds: Pos: %s Size: %s\n",
@@ -40,12 +40,30 @@ namespace hle
 			to_string(mWindow.getDefaultView().getSize()).c_str(),
 			to_string(mWindow.getDefaultView().getCenter()).c_str());
 #endif
+		mPlayer->setVelocity({ 0.f, 0.f });
+
+		while (!mCommandQueue.empty())
+			mSceneGraph.onCommand(mCommandQueue.pop(), dt);
+
+		mWorldView.move(0.f, mScrollSpeed * dt.asSeconds());
+
+		auto vel = mPlayer->getVelocity();
+
+		if (vel.x != 0.f && vel.y != 0.f)
+			mPlayer->setVelocity(vel / std::sqrt(2.f));
+
+		reinterpret_cast<Spaceship*>(mPlayer)->accelerate({ 0.f, mScrollSpeed });
+
 		mSceneGraph.update(dt);
 	}
 	void World::draw()
 	{
 		mWindow.setView(mWorldView);
 		mWindow.draw(mSceneGraph);
+	}
+	CommandQueue& World::getCommandQueue()
+	{
+		return mCommandQueue;
 	}
 	void World::loadTextures()
 	{

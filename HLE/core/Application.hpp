@@ -6,6 +6,7 @@
 #include "../Debug.hpp"
 
 #include "../World.hpp"
+#include "../input/Player.hpp"
 
 #if defined(DEBUG_FPS_INFO)
 #include <SFML/Graphics/Font.hpp>
@@ -27,6 +28,7 @@ namespace hle
 		sf::Text mFPSText;
 #endif
 		World mWorld;
+		Player mPlayer;
 	private:
 		void processEvents();
 		void update(sf::Time dt);
@@ -34,6 +36,7 @@ namespace hle
 
 	private:
 		sf::RenderWindow mWindow;
+		bool mIsPaused = false, mPausedFromLostFocus = false;
 	};
 
 }

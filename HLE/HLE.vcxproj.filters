@@ -82,6 +82,12 @@
     <Filter Include="Source Files\scene">
       <UniqueIdentifier>{ddcc2e71-6661-427a-ba41-446dc759f688}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\command">
+      <UniqueIdentifier>{061c7612-a9a8-4e3d-8d07-e349076acb92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\command">
+      <UniqueIdentifier>{38cba59b-ef20-4123-bb37-5b2cfbf03a43}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -254,6 +260,18 @@
     </ClCompile>
     <ClCompile Include="View.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="command\Command.cpp">
+      <Filter>Source Files\command</Filter>
+    </ClCompile>
+    <ClCompile Include="command\Category.cpp">
+      <Filter>Source Files\command</Filter>
+    </ClCompile>
+    <ClCompile Include="command\CommandQueue.cpp">
+      <Filter>Source Files\command</Filter>
+    </ClCompile>
+    <ClCompile Include="input\Player.cpp">
+      <Filter>Source Files\input</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -430,6 +448,18 @@
     </ClInclude>
     <ClInclude Include="View.hpp">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="command\Command.hpp">
+      <Filter>Header Files\command</Filter>
+    </ClInclude>
+    <ClInclude Include="command\Category.hpp">
+      <Filter>Header Files\command</Filter>
+    </ClInclude>
+    <ClInclude Include="command\CommandQueue.hpp">
+      <Filter>Header Files\command</Filter>
+    </ClInclude>
+    <ClInclude Include="input\Player.hpp">
+      <Filter>Header Files\input</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

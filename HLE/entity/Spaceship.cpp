@@ -32,6 +32,22 @@ namespace hle
 	{
 		center_origin(mSprite);
 	}
+	void Spaceship::accelerate(const sf::Vector2f velocity)
+	{
+		mVelocity += velocity;
+	}
+	Category::Type Spaceship::getCategory() const
+	{
+		switch (mType)
+		{
+		case Spaceship::Type::FriendlyBlue_1: return Category::Player;
+		case Spaceship::Type::FriendlyGreen_1:
+		case Spaceship::Type::FriendlyOrange_1:
+		case Spaceship::Type::FriendlyRed_1:
+			return Category::Ally;
+		default: return Category::Enemy;
+		}
+	}
 	void Spaceship::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const
 	{
 		target.draw(mSprite, states);

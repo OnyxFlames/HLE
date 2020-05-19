@@ -2,6 +2,8 @@
 
 #include <cassert>
 
+#include "../command/Command.hpp"
+
 namespace hle
 {
 	SceneNode::SceneNode()
@@ -54,6 +56,18 @@ namespace hle
 		}
 
 		return transform;
+	}
+	Category::Type SceneNode::getCategory() const
+	{
+		return Category::Scene;
+	}
+	void SceneNode::onCommand(const Command& command, sf::Time dt)
+	{
+		if (command.category & getCategory())
+			command.action(*this, dt);
+
+		for (Ptr& child : mChildren)
+			child->onCommand(command, dt);
 	}
 	void SceneNode::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	{

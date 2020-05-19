@@ -11,6 +11,7 @@ namespace hle
 	private:
 		static size_t mIDCounter;
 		const size_t mID;
+	protected:
 		sf::Vector2f mVelocity;
 	public:
 		Entity();

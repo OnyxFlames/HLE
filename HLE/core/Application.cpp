@@ -20,7 +20,7 @@ namespace hle
 #if defined(DEBUG_FPS_INFO)
 		mDebugFont.loadFromFile("../resources/fonts/Kenney Future.ttf");
 		mFPSText.setFont(mDebugFont);
-		mFPSText.setScale({0.45f, 0.45f});
+		mFPSText.setScale({0.5f, 0.5f});
 #endif
 	}
 
@@ -41,7 +41,8 @@ namespace hle
 			{
 				lastUpdate -= TimePerFrame;
 				processEvents();
-				update(TimePerFrame);
+				if (!mIsPaused)
+					update(TimePerFrame);
 			}
 			render();
 		}
@@ -49,9 +50,12 @@ namespace hle
 
 	void Application::processEvents()
 	{
+		CommandQueue& commands = mWorld.getCommandQueue();
+
 		sf::Event e;
 		while (mWindow.pollEvent(e))
 		{
+			mPlayer.handleEvent(e, commands);
 			switch (e.type)
 			{
 			case sf::Event::Closed: mWindow.close(); break;
@@ -59,13 +63,36 @@ namespace hle
 			{
 				switch (e.key.code)
 				{
-				case sf::Keyboard::Escape: mWindow.close(); break;
+				case sf::Keyboard::Escape: 
+					if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift) 
+					 || sf::Keyboard::isKeyPressed(sf::Keyboard::RShift))
+						mWindow.close();
+					else
+						mIsPaused = !mIsPaused;
+					break;
 				}
 				break;
 			}
+			case sf::Event::LostFocus:
+				// if paused before focus lost
+				if (!mIsPaused)
+				{
+					mIsPaused = true;
+					mPausedFromLostFocus = true;
+				}
+				break;
+			case sf::Event::GainedFocus:
+				// if paused from user
+				if (mPausedFromLostFocus)
+				{
+					mIsPaused = false;
+					mPausedFromLostFocus = false;
+				}
+				break;
 			}
 
 		}
+		mPlayer.handleRealtimeInput(commands);
 	}
 
 	void Application::update(sf::Time dt)
