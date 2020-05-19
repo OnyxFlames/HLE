@@ -3,9 +3,9 @@
 #include <functional>
 #include <SFML/System/Time.hpp>
 
-#include "../scene/SceneNode.hpp"
-
 #include "Category.hpp"
+#include "../scene/SceneNode.hpp"
+#include "../entity/Entity.hpp"
 
 #include <cassert>
 
@@ -16,6 +16,7 @@ namespace hle
 		Command();
 		std::function<void(SceneNode&, sf::Time)> action;
 		Category::Type category;
+		Entity::ID id;
 	};
 
 

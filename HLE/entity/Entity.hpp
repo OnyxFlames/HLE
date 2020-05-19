@@ -8,9 +8,11 @@ namespace hle
 {
 	class Entity : public SceneNode
 	{
+	public:
+		typedef size_t ID;
 	private:
-		static size_t mIDCounter;
-		const size_t mID;
+		static ID mIDCounter;
+		const ID mID;
 	protected:
 		sf::Vector2f mVelocity;
 	public:

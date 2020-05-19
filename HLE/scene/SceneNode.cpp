@@ -66,6 +66,13 @@ namespace hle
 		if (command.category & getCategory())
 			command.action(*this, dt);
 
+		if (command.category == Category::ByID && dynamic_cast<Entity*>(this) != nullptr)
+		{
+			// prevent invalid casts
+			if (static_cast<Entity&>(*this).getID() == command.id)
+				command.action(*this, dt);
+		}
+
 		for (Ptr& child : mChildren)
 			child->onCommand(command, dt);
 	}

@@ -2,7 +2,7 @@
 
 namespace hle
 {
-	size_t Entity::mIDCounter = 0;
+	Entity::ID Entity::mIDCounter = 0;
 	Entity::Entity()
 		:	mID(mIDCounter++)
 	{

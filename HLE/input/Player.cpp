@@ -12,11 +12,12 @@ namespace hle
 		if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::P)
 		{
 			Command output;
-			output.category = Category::Player;
+			output.category = Category::ByID;
 			output.action = [](SceneNode& s, sf::Time)
 			{
 				printf("Player Pos: %s\n", to_string(s.getPosition()).c_str());
 			};
+			output.id = 0;
 			commands.push(output);
 		}
 	}
