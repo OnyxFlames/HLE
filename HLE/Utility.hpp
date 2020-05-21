@@ -33,6 +33,11 @@ namespace hle
 		void to_lower(std::string& string);
 		void to_upper(std::string& string);
 
+		// Checks to see if a dynamic_cast<To*>(&from) is valid
+
+		template<typename To, typename From>
+		bool castable_to(From& from);
+
 	}
 }
 

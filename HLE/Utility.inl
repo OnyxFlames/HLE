@@ -55,5 +55,10 @@ namespace hle
 
 			return ret;
 		}
+		template<typename To, typename From>
+		bool castable_to(From& from)
+		{
+			return (dynamic_cast<To*>(&from) != nullptr);
+		}
 	}
 }

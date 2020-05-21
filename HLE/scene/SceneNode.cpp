@@ -3,6 +3,7 @@
 #include <cassert>
 
 #include "../command/Command.hpp"
+#include "../Utility.hpp"
 
 namespace hle
 {
@@ -66,7 +67,7 @@ namespace hle
 		if (command.category & getCategory())
 			command.action(*this, dt);
 
-		if (command.category == Category::ByID && dynamic_cast<Entity*>(this) != nullptr)
+		if (command.category == Category::ByID && util::castable_to<Entity>(*this))
 		{
 			// prevent invalid casts
 			if (static_cast<Entity&>(*this).getID() == command.id)
