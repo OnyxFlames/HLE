@@ -5,6 +5,8 @@
 
 #include "../vector/Vector2.hpp"
 
+#include "../time/Time.hpp"
+
 namespace hle
 {
 	void Player::handleEvent(const sf::Event& event, CommandQueue& commands)
@@ -13,9 +15,9 @@ namespace hle
 		{
 			Command output;
 			output.category = Category::ByID;
-			output.action = [](SceneNode& s, sf::Time)
+			output.action = [](SceneNode& s, sf::Time dt)
 			{
-				printf("Player Pos: %s\n", to_string(s.getPosition()).c_str());
+				printf("Player Pos: %s %s\n", to_string(s.getPosition()).c_str(), time::to_string(dt).c_str());
 			};
 			output.id = 0;
 			commands.push(output);

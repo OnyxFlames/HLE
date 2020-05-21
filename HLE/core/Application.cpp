@@ -20,7 +20,7 @@ namespace hle
 #if defined(DEBUG_FPS_INFO)
 		mDebugFont.loadFromFile("../resources/fonts/Kenney Future.ttf");
 		mFPSText.setFont(mDebugFont);
-		mFPSText.setScale({0.5f, 0.5f});
+		mFPSText.setScale({0.5f, 0.4f});
 #endif
 	}
 
@@ -28,7 +28,9 @@ namespace hle
 	{
 		sf::Clock runtime;
 		sf::Time lastUpdate = sf::Time::Zero;
+#if defined(DEBUG_FPS_INFO)
 		hle::time::FramerateClock mFrameClock;
+#endif
 		while (mWindow.isOpen())
 		{
 			processEvents();

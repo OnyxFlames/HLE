@@ -4,6 +4,7 @@
 
 #include <unordered_set>
 #include <vector>
+#include <string>
 #include <map>
 
 namespace hle
@@ -26,6 +27,11 @@ namespace hle
 		template <typename T>
 		std::vector<T> remove_duplicates(const std::vector<T>& vec);
 
+		std::string as_lower(const std::string& string);
+		std::string as_upper(const std::string& string);
+
+		void to_lower(std::string& string);
+		void to_upper(std::string& string);
 
 	}
 }
