@@ -35,12 +35,13 @@ namespace hle
 		{
 			processEvents();
 			lastUpdate += runtime.restart();
-#if defined(DEBUG_FPS_INFO)
-			if (mFrameClock.update())
-				mFPSText.setString("FPS: " + std::to_string(mFrameClock.getFramerate()));
-#endif
+
 			while (lastUpdate > TimePerFrame)
 			{
+#if defined(DEBUG_FPS_INFO)
+				if (mFrameClock.update())
+					mFPSText.setString("FPS: " + std::to_string(mFrameClock.getFramerate()));
+#endif
 				lastUpdate -= TimePerFrame;
 				processEvents();
 				if (!mIsPaused)
