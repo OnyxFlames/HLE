@@ -9,7 +9,7 @@ namespace hle
 	class Entity : public SceneNode
 	{
 	public:
-		typedef size_t ID;
+		typedef int32_t ID;
 	private:
 		static ID mIDCounter;
 		const ID mID;

@@ -36,8 +36,7 @@ namespace hle
 		// Checks to see if a dynamic_cast<To*>(&from) is valid
 
 		template<typename To, typename From>
-		bool castable_to(From& from);
-
+		constexpr bool castable_to(From& from);
 	}
 }
 

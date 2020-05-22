@@ -9,13 +9,18 @@
 
 #include <cassert>
 
+#include "../Utility.hpp"
+
 namespace hle
 {
 	struct Command
 	{
+		typedef std::function<void(SceneNode&, sf::Time)> Action;
 		Command();
-		std::function<void(SceneNode&, sf::Time)> action;
+		Command(Category::Type _type, Action _action);
+		Command(Category::Type _type, Action _action, Entity::ID id);
 		Category::Type category;
+		Action action;
 		Entity::ID id;
 	};
 
@@ -28,7 +33,7 @@ namespace hle
 	{
 		return [=](SceneNode& node, sf::Time dt)
 		{
-			assert(dynamic_cast<GameObject*>(&node) != nullptr);
+			assert(util::castable_to<GameObject>(node));
 
 			fn(static_cast<GameObject&>(node), dt);
 		};
