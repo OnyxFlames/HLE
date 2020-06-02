@@ -10,8 +10,6 @@
 namespace hle
 {
 
-	//std::map<Player::Action, Player::ActionType> Player::mActionType;
-
 	Player::Player()
 	{
 		initializeDefaultKeybindings();
@@ -43,7 +41,7 @@ namespace hle
 	{
 		for (auto itr = mActionBinding.begin(); itr != mActionBinding.end();)
 		{
-			if (itr->second == command)
+			if (itr->first == action)
 				mActionBinding.erase(itr++);
 			else
 				++itr;

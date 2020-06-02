@@ -22,11 +22,6 @@ namespace hle
 		Category::Type category;
 		Action action;
 		Entity::ID id;
-
-		inline bool operator==(const Command& other)
-		{
-			return (category == other.category /*&& action == other.action*/ && id == other.id);
-		}
 	};
 
 
@@ -38,7 +33,7 @@ namespace hle
 	{
 		return [=](SceneNode& node, sf::Time dt)
 		{
-			//assert(util::castable_to<GameObject>(node));
+			assert(util::castable_to<GameObject>(node));
 
 			fn(static_cast<GameObject&>(node), dt);
 		};
