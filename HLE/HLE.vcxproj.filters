@@ -88,6 +88,12 @@
     <Filter Include="Source Files\command">
       <UniqueIdentifier>{38cba59b-ef20-4123-bb37-5b2cfbf03a43}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\state">
+      <UniqueIdentifier>{dd7c4645-6c8e-46ef-a207-696365e3b7bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\state">
+      <UniqueIdentifier>{1069ad01-0433-4224-9c9e-fa047852e585}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

@@ -31,10 +31,30 @@ namespace hle
 			{
 			case TimeFormat::Microseconds:	oss << time.asMicroseconds() << "us"; break;
 			case TimeFormat::Milliseconds:	oss << time.asMilliseconds() << "ms"; break;
-			case TimeFormat::Seconds:		oss << time.asSeconds() << "s"; break;
-			case TimeFormat::Minutes:		oss << time.asSeconds() / Minute.asSeconds() << "minutes"; break;
-			case TimeFormat::Hours:			oss << time.asSeconds() / Hour.asSeconds() << "hour(s)"; break;
-			case TimeFormat::Days:			oss << time.asSeconds() / Day.asSeconds() << "day(s)"; break;
+			case TimeFormat::Seconds:
+			{
+				const auto sec = time.asSeconds();
+				oss << sec << (sec == 1.f ? "sec" : "secs"); 
+				break; 
+			}
+			case TimeFormat::Minutes:
+			{
+				const auto min = time.asSeconds() / Minute.asSeconds();
+				oss << min << (min == 1.f ? "minute" : "minutes");
+				break;
+			}
+			case TimeFormat::Hours:
+			{
+				const auto hour = time.asSeconds() / Hour.asSeconds();
+				oss << hour << (hour == 1.f ? "hour" : "hours");
+				break;
+			}
+			case TimeFormat::Days:
+			{
+				const auto day = time.asSeconds() / Day.asSeconds();
+				oss << day << (day == 1.f ? "day" : "days");
+				break;
+			}
 			case TimeFormat::Clock:
 				{
 					sf::Time buff = time;
