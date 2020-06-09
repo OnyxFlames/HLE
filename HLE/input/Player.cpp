@@ -110,9 +110,10 @@ namespace hle
 
 		mActionBinding[ShowPos].action = [](SceneNode& node, sf::Time dt) 
 		{ 
-			printf("Pos: %s Vel %s\n", 
+			printf("Pos: %s Vel %s Time: %s\n", 
 				to_string(node.getPosition()).c_str(), 
-				to_string(reinterpret_cast<Entity*>(&node)->getVelocity()).c_str());  
+				to_string(reinterpret_cast<Entity*>(&node)->getVelocity()).c_str(),
+				time::format_time(sf::seconds(1), hle::time::TimeFormat::Minutes).c_str());  
 		};
 
 		// assigned actions get an ActionType, do while setting Category to player to be efficient with this loop

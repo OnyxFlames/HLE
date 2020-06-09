@@ -29,30 +29,30 @@ namespace hle
 
 			switch (format)
 			{
-			case TimeFormat::Microseconds:	oss << time.asMicroseconds() << "us"; break;
-			case TimeFormat::Milliseconds:	oss << time.asMilliseconds() << "ms"; break;
+			case TimeFormat::Microseconds:	oss << time.asMicroseconds() << " us"; break;
+			case TimeFormat::Milliseconds:	oss << time.asMilliseconds() << " ms"; break;
 			case TimeFormat::Seconds:
 			{
 				const auto sec = time.asSeconds();
-				oss << sec << (sec == 1.f ? "sec" : "secs"); 
+				oss << sec << (sec == 1.f ? " second" : " seconds"); 
 				break; 
 			}
 			case TimeFormat::Minutes:
 			{
 				const auto min = time.asSeconds() / Minute.asSeconds();
-				oss << min << (min == 1.f ? "minute" : "minutes");
+				oss << min << (min == 1.f ? " minute" : " minutes");
 				break;
 			}
 			case TimeFormat::Hours:
 			{
 				const auto hour = time.asSeconds() / Hour.asSeconds();
-				oss << hour << (hour == 1.f ? "hour" : "hours");
+				oss << hour << (hour == 1.f ? " hour" : " hours");
 				break;
 			}
 			case TimeFormat::Days:
 			{
 				const auto day = time.asSeconds() / Day.asSeconds();
-				oss << day << (day == 1.f ? "day" : "days");
+				oss << day << (day == 1.f ? " day" : " days");
 				break;
 			}
 			case TimeFormat::Clock:
@@ -78,15 +78,15 @@ namespace hle
 				break;
 				}
 			case TimeFormat::BySize:
-				if (time >= sf::microseconds(1) && time <= sf::milliseconds(1))
+				if (time >= sf::microseconds(1) && time < sf::milliseconds(1))
 					return format_time(time, TimeFormat::Microseconds);
-				else if (time >= sf::milliseconds(1) && time <= sf::seconds(1.f))
+				else if (time >= sf::milliseconds(1) && time < sf::seconds(1.f))
 					return format_time(time, TimeFormat::Milliseconds);
-				else if (time >= sf::seconds(1.f) && time <= time::minutes(1.f))
+				else if (time >= sf::seconds(1.f) && time < time::minutes(1.f))
 					return format_time(time, TimeFormat::Seconds);
-				else if (time >= time::minutes(1.f) && time <= time::hours(1.f))
+				else if (time >= time::minutes(1.f) && time < time::hours(1.f))
 					return format_time(time, TimeFormat::Minutes);
-				else if (time >= time::hours(1.f) && time <= time::days(1.f))
+				else if (time >= time::hours(1.f) && time < time::days(1.f))
 					return format_time(time, TimeFormat::Hours);
 				else if (time >= time::days(1.f))
 					return format_time(time, TimeFormat::Days);
