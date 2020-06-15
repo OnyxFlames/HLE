@@ -16,6 +16,7 @@ namespace hle
 	Application::Application()
 		: mWindow(sf::VideoMode(1280, 960), "HLE - Hierarch Labs Engine")
 		, mWorld(mWindow)
+		, mStateStack(State::Context(mWindow, mTextures, mFonts, mPlayer))
 	{
 #if defined(DEBUG_FPS_INFO)
 		mDebugFont.loadFromFile("../resources/fonts/Kenney Future.ttf");
@@ -46,6 +47,9 @@ namespace hle
 				processEvents();
 				if (!mIsPaused)
 					update(TimePerFrame);
+
+				if (mStateStack.empty())
+					mWindow.close();
 			}
 			render();
 		}
@@ -58,7 +62,9 @@ namespace hle
 		sf::Event e;
 		while (mWindow.pollEvent(e))
 		{
-			mPlayer.handleEvent(e, commands);
+
+			mStateStack.handleEvent(e);
+			
 			switch (e.type)
 			{
 			case sf::Event::Closed: mWindow.close(); break;
@@ -95,24 +101,28 @@ namespace hle
 			}
 
 		}
-		mPlayer.handleRealtimeInput(commands);
 	}
 
 	void Application::update(sf::Time dt)
 	{
-		mWorld.update(dt);
+		mStateStack.update(dt);
 	}
 
 	void Application::render()
 	{
 		mWindow.clear();
-		mWorld.draw();
+		mStateStack.draw();
 		mWindow.setView(mWindow.getDefaultView());
 
 #if defined(DEBUG_FPS_INFO)
 		mWindow.draw(mFPSText);
 #endif
 		mWindow.display();
+	}
+
+	void Application::registerStates()
+	{
+		//mStateStack.registerState<ErrorState>(States::ErrorState);
 	}
 
 } // hle

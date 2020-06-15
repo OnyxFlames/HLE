@@ -279,6 +279,12 @@
     <ClCompile Include="input\Player.cpp">
       <Filter>Source Files\input</Filter>
     </ClCompile>
+    <ClCompile Include="state\StateStack.cpp">
+      <Filter>Source Files\state</Filter>
+    </ClCompile>
+    <ClCompile Include="state\State.cpp">
+      <Filter>Source Files\state</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="imgui\imconfig.h">
@@ -466,6 +472,15 @@
     </ClInclude>
     <ClInclude Include="input\Player.hpp">
       <Filter>Header Files\input</Filter>
+    </ClInclude>
+    <ClInclude Include="state\StateStack.hpp">
+      <Filter>Header Files\state</Filter>
+    </ClInclude>
+    <ClInclude Include="state\State.hpp">
+      <Filter>Header Files\state</Filter>
+    </ClInclude>
+    <ClInclude Include="state\StateIdentifiers.hpp">
+      <Filter>Header Files\state</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

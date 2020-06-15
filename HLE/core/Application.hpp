@@ -13,6 +13,8 @@
 #include <SFML/Graphics/Text.hpp>
 #endif
 
+#include "../state/StateStack.hpp"
+
 namespace hle
 {
 
@@ -34,8 +36,12 @@ namespace hle
 		void update(sf::Time dt);
 		void render();
 
+		void registerStates();
 	private:
 		sf::RenderWindow mWindow;
+		StateStack mStateStack;
+		TextureManager mTextures;
+		FontManager mFonts;
 		bool mIsPaused = false, mPausedFromLostFocus = false;
 	};
 

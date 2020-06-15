@@ -179,6 +179,8 @@
     <ClCompile Include="math\Math.cpp" />
     <ClCompile Include="scene\SceneNode.cpp" />
     <ClCompile Include="scene\SpriteNode.cpp" />
+    <ClCompile Include="state\State.cpp" />
+    <ClCompile Include="state\StateStack.cpp" />
     <ClCompile Include="time\FramerateClock.cpp" />
     <ClCompile Include="time\Time.cpp" />
     <ClCompile Include="transform\Transform.cpp" />
@@ -243,6 +245,9 @@
     <ClInclude Include="math\Math.hpp" />
     <ClInclude Include="scene\SceneNode.hpp" />
     <ClInclude Include="scene\SpriteNode.hpp" />
+    <ClInclude Include="state\State.hpp" />
+    <ClInclude Include="state\StateIdentifiers.hpp" />
+    <ClInclude Include="state\StateStack.hpp" />
     <ClInclude Include="time\FramerateClock.hpp" />
     <ClInclude Include="time\Time.hpp" />
     <ClInclude Include="transform\Transform.hpp" />
